@@ -16,10 +16,14 @@
  * After each update, you must change this again or save the address before doing an update.
  */
 
-//var server="search.yacy.net";
-var server="localhost:8090";
-var searchURL='http://' + server + '/yacysearch.json?callback=?';
-//var searchURL='http://' + server + '/solr/select?callback=?';
+// In case that this page is hosted without any changes, it takes search results
+// from search.yacy.net.
+// If you host this locally, it takes results from your local running YaCy installation.
+// Replace the server config with the host name of your own YaCy installation:
+// i.e. var server="search.yacy.net";
+var server= window.location.href.startsWith("file://") ? "localhost:8090" : "search.yacy.net";
+//var searchURL='http://' + server + '/yacysearch.json?callback=?';
+var searchURL='http://' + server + '/solr/select?callback=?';
 var suggestUrl='http://' + server + '/suggest.json?callback=?';
 var homepage="http://yacy.net";
 var logo="../images/YaCyLogo2011_60.png";
