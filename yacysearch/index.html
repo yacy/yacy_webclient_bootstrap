@@ -346,7 +346,7 @@ open about:config and set security.fileuri.strict_origin_policy to ‘false.’
         }
         
         // update progress and navigation
-        statistics(startRecord, maximumRecords, totalResults, window.location.href.replace(/&startRecord=[^&#]*&/g,"&")); //startRecord, maximumRecords, totalcount, navurlbase
+        statistics(startRecord, maximumRecords, totalResults, window.location.href.replace(/&startRecord=[^&#]*/g,"")); //startRecord, maximumRecords, totalcount, navurlbase
       },
       error:function(searchResult) {
         document.getElementById("progressbar_text").innerHTML = "The search service is not available right now. Please try again.";
