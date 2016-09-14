@@ -281,10 +281,11 @@ var NavigationCollection = Backbone.Collection.extend({
     for (i = 0; i < this.length; i++) {
       var facet = this.at(i);
       var elements = facet.attributes.elements;
-      if (elements[0].modifier === undefined) continue;
-      var modifier = decodeURIComponent(elements[0].modifier);
-      var mix = modifier.indexOf("/vocabulary", 0);
-      if (mix == 0 || mix == 1) elts[fc++] = facet.attributes.facetname;
+      if (elements != null && elements.length > 0 && elements[0].modifier != null) {
+    	  var modifier = decodeURIComponent(elements[0].modifier);
+    	  var mix = modifier.indexOf("/vocabulary", 0);
+    	  if (mix == 0 || mix == 1) elts[fc++] = facet.attributes.facetname;
+      }
     }
     return elts;
   },
