@@ -29,7 +29,6 @@ open about:config and set security.fileuri.strict_origin_policy to ‘false.’
 
   <script src="../bootstrap/js/jquery.min.js"></script>
   <script src="../bootstrap/js/bootstrap.min.js"></script>
-  <script src="../bootstrap/js/docs.min.js"></script>
 
   <script src="navigation.js" type="text/javascript"></script>
   <script src="../js/lib/underscore-min.js"></script>
@@ -346,7 +345,7 @@ open about:config and set security.fileuri.strict_origin_policy to ‘false.’
         }
         
         // update progress and navigation
-        statistics(startRecord, maximumRecords, totalResults, window.location.href.replace(/&startRecord=[^&#]*&/g,"&")); //startRecord, maximumRecords, totalcount, navurlbase
+        statistics(startRecord, maximumRecords, totalResults, window.location.href.replace(/&startRecord=[^&#]*/g,"")); //startRecord, maximumRecords, totalcount, navurlbase
       },
       error:function(searchResult) {
         document.getElementById("progressbar_text").innerHTML = "The search service is not available right now. Please try again.";
