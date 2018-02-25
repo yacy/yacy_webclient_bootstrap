@@ -23,8 +23,8 @@
 // i.e. var server="search.yacy.net";
 //var server= window.location.href.startsWith("file://") ? "localhost:8090" : "yacy.searchlab.eu";
 var server= "yacy.searchlab.eu"
-//var searchURL='http://' + server + '/yacysearch.json?callback=?';
-var searchURL='http://' + server + '/solr/select?callback=?';
+var searchURL='http://' + server + '/yacysearch.json?callback=?';
+//var searchURL='http://' + server + '/solr/select?callback=?';
 //var searchURL='http://' + server + '/yacy/grid/mcp/index/yacysearch.json?callback=?';
 //var suggestUrl='http://' + server + '/yacy/grid/mcp/index/suggest.json?callback=?';
 var homepage="http://yacy.net";
