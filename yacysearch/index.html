@@ -112,19 +112,42 @@ open about:config and set security.fileuri.strict_origin_policy to ‘false.’
   <!-- top navigation -->
   <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+    	<div class="col-sm-5 col-md-4 col-lg-3">
+			<div class="collapse navbar-collapse navbar-header">
+				<ul class="nav navbar-nav">
+					<li><a id="homepage" class="navbar-brand" href="http://yacy.net">
+          					<img id="logo" class="yacylogo" src="../images/YaCyLogo2011_60.png" alt="YaCy" style="max-width:200px; max-height:32px">
+        				</a>
+        			</li>
+					<li><h1><span id="topmenu"></span></h1></li>
+				</ul>
+			</div>
+		</div>
+		<div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header_help_collapse" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a id="homepage" class="navbar-brand" href="http://yacy.net" style="position:absolute;top:-6px;display:inline;white-space:nowrap;">
-          <img id="logo" class="yacylogo" src="../images/YaCyLogo2011_60.png" alt="YaCy" style="height:auto; width:auto; max-width:200px; max-height:32px;vertical-align:middle">
-        </a>
-        <span id="topmenu" style="position:absolute;top:12px;left:80px;display:inline;white-space:nowrap;font-size:2em;"></span>
-      </div>
-      <div class="navbar-collapse collapse">
+        <form class="form-inline" name="searchform" action="#" method="get" accept-charset="UTF-8" >
+          <div class="input-group" style="margin-top: 6px; padding-left:5px">
+            <input name="query" id="query" type="text" class="form-control searchinput typeahead" maxlength="200" style="display:table-cell"
+            	placeholder="Document Retrieval" value="" autofocus="autofocus" onFocus="this.select()" onclick="document.getElementById('Enter').innerHTML = 'search'"/>
+            <span class="input-group-btn">
+              <button id="Enter" name="Enter" class="btn btn-default" type="submit">search</button>
+            </span>
+          </div>
+          <input type="hidden" name="nav" value="filetype,protocol,hosts,language,authors,namespace,topics" />
+          <input type="hidden" name="maximumRecords" id="maximumRecords" value="10" />
+          <input type="hidden" name="startRecord" id="startRecord" value="0" />
+          <input type="hidden" name="layout" id="layout" value="paragraph" />
+          <input type="hidden" name="contentdom" id="contentdom" value="text" />
+          <input id="timezoneOffset" type="hidden" name="timezoneOffset" value="">
+          <script>document.getElementById("timezoneOffset").value = new Date().getTimezoneOffset();</script>
+        </form>
+		</div>
+      <div id="header_help_collapse" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
           <li id="header_help" class="dropdown">
             <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="glyphicon glyphicon-question-sign"></span></a>
@@ -153,21 +176,6 @@ open about:config and set security.fileuri.strict_origin_policy to ‘false.’
 
     <div class="row">
       <div class="col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3 main" id="main">
-        <form class="search small" name="searchform" action="#" method="get" accept-charset="UTF-8" style="position:fixed;top:6px;z-index:1052;max-width:500px;">
-          <div class="input-group">
-            <input name="query" id="query" type="text" class="form-control searchinput typeahead" size="40" maxlength="200" placeholder="Document Retrieval" value="" autofocus="autofocus" onFocus="this.select()" onclick="document.getElementById('Enter').innerHTML = 'search'"/>
-            <div class="input-group-btn">
-              <button id="Enter" name="Enter" class="btn btn-default" type="submit">search</button>
-            </div>
-          </div>
-          <input type="hidden" name="nav" value="filetype,protocol,hosts,language,authors,namespace,topics" />
-          <input type="hidden" name="maximumRecords" id="maximumRecords" value="10" />
-          <input type="hidden" name="startRecord" id="startRecord" value="0" />
-          <input type="hidden" name="layout" id="layout" value="paragraph" />
-          <input type="hidden" name="contentdom" id="contentdom" value="text" />
-          <input id="timezoneOffset" type="hidden" name="timezoneOffset" value="">
-          <script>document.getElementById("timezoneOffset").value = new Date().getTimezoneOffset();</script>
-        </form>
 
         <!-- type the number of results and navigation bar -->
         <div id="results"></div>

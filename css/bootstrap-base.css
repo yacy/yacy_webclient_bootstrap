@@ -97,6 +97,11 @@ ul.nav li.dropdown:hover ul.dropdown-menu{
  * twitter-typeahead, tt-dropdown-menu, tt-dataset-%CLASS%, tt-suggestions, tt-suggestion
  * tt-hint, tt-input, tt-cursor
  */
+ 
+ /* Control width of the span added around search input by typehead.js */
+ .input-group .twitter-typeahead {
+ 	width:100%
+ } 
 
 .tt-dropdown-menu {
   width: 396px;
