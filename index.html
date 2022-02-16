@@ -58,7 +58,7 @@ open about:config and set security.fileuri.strict_origin_policy to ‘false.’
   //<!--
      var suggestMatcher = function() {
        return function opensearch(q, cb) {
-       	 $.getJSON(suggestUrl + "&q="+ q, function(data) {
+       	 $.getJSON(suggest_api + "&q="+ q, function(data) {
            	var parsed = [];
             for (var i = 0; i < data[0][1].length; i++) {
                 var row = data[0][1][i];

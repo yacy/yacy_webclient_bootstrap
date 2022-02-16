@@ -22,11 +22,13 @@
 // Replace the server config with the host name of your own YaCy installation:
 // i.e. var server="search.yacy.net";
 //var server= window.location.href.startsWith("file://") ? "localhost:8090" : "yacy.searchlab.eu";
-var server= "yacy.searchlab.eu"
-var searchURL='http://' + server + '/yacysearch.json?callback=?';
-//var searchURL='http://' + server + '/solr/select?callback=?';
-//var searchURL='http://' + server + '/yacy/grid/mcp/index/yacysearch.json?callback=?';
-//var suggestUrl='http://' + server + '/yacy/grid/mcp/index/suggest.json?callback=?';
+//var server= "localhost:8090"
+//var search_api='http://' + server + '/yacysearch.json?callback=?';
+var search_api='https://searchlab.eu/en/api/yacysearch.json?callback=?';
+var suggest_api='https://searchlab.eu/en/api/suggest.json?callback=?';
+//var search_api='http://' + server + '/solr/select?callback=?';
+//var search_api='http://' + server + '/yacy/grid/mcp/index/yacysearch.json?callback=?';
+//var suggest_api='http://' + server + '/yacy/grid/mcp/index/suggest.json?callback=?';
 var homepage="http://yacy.net";
 var logo="../images/YaCyLogo2011_60.png";
 var headline="Search Portal";
